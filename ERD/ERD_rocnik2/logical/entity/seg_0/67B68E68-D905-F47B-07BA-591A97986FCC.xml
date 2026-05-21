@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="67B68E68-D905-F47B-07BA-591A97986FCC" name="KLIENT">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 09:34:36 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="klient_id" id="40C1E8AD-6336-6AD6-0D80-AAE8ED78F0B6">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 09:35:30 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="jmeno" id="C3D65FD6-3D57-3997-3234-58DAE837F530">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 09:36:36 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prijmeni" id="7D1D2872-BC1C-A869-9E2D-C57AF9152D33">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 09:36:39 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="email" id="8A65E175-D947-61E1-8A24-63E9B85A0C6A">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 09:35:34 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="telefon" id="B5382127-10AF-6A62-002D-040B25D21737">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 09:37:00 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="heslo_hash" id="8A808498-1970-AFA7-E5C1-CE9F278C67A3">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:06:27 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="5B48E33B-DB6E-4D6A-88CC-6BE5FF037C6D" name="KLIENT PK">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 09:37:32 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>40C1E8AD-6336-6AD6-0D80-AAE8ED78F0B6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

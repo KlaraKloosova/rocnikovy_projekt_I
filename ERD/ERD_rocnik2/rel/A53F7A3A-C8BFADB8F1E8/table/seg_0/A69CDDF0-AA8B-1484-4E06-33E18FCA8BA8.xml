@@ -1,0 +1,112 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A69CDDF0-AA8B-1484-4E06-33E18FCA8BA8" name="POLOZKY_REZERVACE">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>14463E81-E675-C461-A0F3-D1DE3007638E</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<ordsAlias>polozka_rezervace</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="polozka_id" id="4074ACD4-EEF0-3B9B-B0F9-B783CA7C0BA1">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>EC1E928B-77B6-7476-463F-39882CD52362</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cena_pro_rezervaci" id="B34B3E7C-658D-D447-AD66-68BE0AF31ED9">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>56D9FB05-644F-E0D3-8161-939FB70B064B</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="delka_rezervace" id="01132293-8350-4AF7-6068-B197230AECCC">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>68290BF1-78DA-6488-93CE-857782AD5DED</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REZERVACE_rezervace_id" id="B4BD8BBC-0412-E55B-7B9F-C0C4AC714C3E">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>664F0947-EB13-AAFC-F86A-FDE3678E2FFB</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D7800592-1C3E-C1F3-EDF3-BB57557DF0CA" referredColumn="293368B1-BF5D-9A5D-3EE6-8B246E3B5999"/>
+</associations>
+</Column>
+<Column name="STYL_styl_id" id="CE9CB6AE-C365-01BC-E452-3D6152E1E9F1">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>F3805250-EAA2-3E77-530D-43D2ECC9623A</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0029F09B-E0E4-B87C-C560-5F461853FB99" referredColumn="A2DD6617-5443-1C0C-284E-B5D28D2A3134"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2583BD07-E739-2682-AE92-114828FE6282" name="POLOZKA_REZERVACE_PK">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>3C6C2689-EC72-0D43-D57C-F70E562722DA</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4074ACD4-EEF0-3B9B-B0F9-B783CA7C0BA1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CC5C2443-E111-48D5-3250-F5C9BC54BA76" name="POLOZKA_REZ_REZERVACE_FK">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>B267BCB1-74A0-7E59-B491-F9F698071F56</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B4BD8BBC-0412-E55B-7B9F-C0C4AC714C3E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="34139A08-4C07-C13F-4F78-61F4CF0DDEC2" name="POLOZKA_REZ_STYL_FK">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>D160E59E-9515-5204-9570-D94D78A97C77</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CE9CB6AE-C365-01BC-E452-3D6152E1E9F1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

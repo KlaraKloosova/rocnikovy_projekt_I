@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="937821B5-2101-0244-88A6-DA1332CD8800" name="VYJIMKA_V_ROZVRHU">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:10:11 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="vyjimka_id" id="AC99787C-7E5F-5C0A-388B-6303997160A3">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:10:20 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="datum" id="8D68CED9-9D3F-47E0-9A67-71F5F2C2F515">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:10:48 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cas_od" id="55685200-948E-5EEF-EF57-A64857066CE4">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:10:53 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cas_do" id="C8E791A0-376C-A031-31BC-6E2D9E69C484">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:10:56 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="stylista_id" id="3D947EA7-9A50-FA44-2888-84DCBA19FFE2">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:11:11 UTC</createdTime>
+<generatorID>412B044A-7237-5BE0-E83F-6266E5E9B925</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<referedAttribute>2EC84B99-A9F8-7A3E-45F2-9D0B2730E3D7</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A6F5B5C6-8729-1508-F65B-C18F383EB439" name="VYJIMKA_V_ROZVRHU PK">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:10:31 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>AC99787C-7E5F-5C0A-388B-6303997160A3</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

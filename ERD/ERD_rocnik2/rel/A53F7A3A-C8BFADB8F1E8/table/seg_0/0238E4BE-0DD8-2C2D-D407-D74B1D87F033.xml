@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0238E4BE-0DD8-2C2D-D407-D74B1D87F033" name="SPECIALIZACE_STYLISTY">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>EDB6C9B1-83B5-D715-B425-715F5EBDDB53</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="STYLISTA_stylista_id" id="7C18111F-7707-46BB-72F9-43C55E1DA018">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>733BC8CC-B825-D668-09C1-06D3A9F38D76</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D3B274C0-D301-66F5-D812-7026BC58BF4F" referredColumn="EF136A67-53F0-3B2B-C2B3-BEF1F91B57B3"/>
+</associations>
+</Column>
+<Column name="SPECIALIZACE_specializace_id" id="A7EACFB4-0B5C-20CD-3A71-C817DC854D80">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>32CE3EF4-6842-31EA-C3E6-7BE4AE07EAA1</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="695E2E9F-5FD3-5370-967B-FF77F03BE6FC" referredColumn="EC46EC8A-63C3-70B3-219B-F83825FD23E4"/>
+</associations>
+</Column>
+<Column name="detail" id="1BBD5ED4-C7DA-0A6F-15C9-C820C347DF8F">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-11 11:35:07 UTC</createdTime>
+<generatorID>3B47BE42-A443-FE8B-0D5B-DFB932B17B80</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BD469A9F-192E-3F20-CCB0-2BD875926A42" name="SPEC_STYLISTY_SPECIALIZACE_FK">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>A1184E0F-1275-F13B-A43A-87C3B4002C7D</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A7EACFB4-0B5C-20CD-3A71-C817DC854D80"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0DFEF566-AFD2-D552-EC1E-FF9DCB50A43C" name="SPEC_STYLISTY_STYLISTA_FK">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>C1681261-756A-383C-B050-E6DC730EB1C9</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7C18111F-7707-46BB-72F9-43C55E1DA018"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7551353D-5EC9-BE66-496F-A4AA1123323A" name="VYJIMKY_V_ROZVRHU">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>937821B5-2101-0244-88A6-DA1332CD8800</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<ordsAlias>vyjimka_v_rozvrhu</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="vyjimka_id" id="E5C45199-978C-BA26-2EF6-6DD327102A42">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>AC99787C-7E5F-5C0A-388B-6303997160A3</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="datum" id="7BF79D66-8AC5-2076-0745-9C8D22C7215C">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>8D68CED9-9D3F-47E0-9A67-71F5F2C2F515</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cas_od" id="3F82FA12-F915-BD46-2968-90ECC394B296">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>55685200-948E-5EEF-EF57-A64857066CE4</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cas_do" id="34DB3172-96D1-C5D1-F375-81696F97C180">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>C8E791A0-376C-A031-31BC-6E2D9E69C484</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STYLISTA_stylista_id" id="522F33FC-C8BB-9C66-EA3F-9BBFE7E7AE3C">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>3D947EA7-9A50-FA44-2888-84DCBA19FFE2</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CACA6CED-FD0D-0F0E-DECD-E78AD8381946" referredColumn="EF136A67-53F0-3B2B-C2B3-BEF1F91B57B3"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1DF4BB09-F611-4844-25C0-B5216D174FAB" name="VYJIMKA_V_ROZVRHU_PK">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>A6F5B5C6-8729-1508-F65B-C18F383EB439</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E5C45199-978C-BA26-2EF6-6DD327102A42"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E3AF038A-DFCE-30B4-874D-026A6CA5E745" name="VYJIMKA_V_ROZ_STYLISTA_FK">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>412B044A-7237-5BE0-E83F-6266E5E9B925</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="522F33FC-C8BB-9C66-EA3F-9BBFE7E7AE3C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9F92A0D0-0A76-CCDF-CB17-9BF1EA1E30C5" name="STYLY">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>E2D0A6DD-FA20-F8DF-C6EE-BC4C50E8C6F4</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<ordsAlias>styl</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="styl_id" id="A2DD6617-5443-1C0C-284E-B5D28D2A3134">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>64BDF229-F464-045C-1D6B-84CB165AE24F</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nazev" id="19530B5B-C366-4D3F-349B-74332A842150">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>3EC82544-5EED-B86A-1C65-EE3EF45C3B88</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="popis" id="24B5086A-6CF5-3766-79CD-56472F502E41">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>A8D22BDF-5F76-B18C-3E83-5755086185A7</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cena" id="550D4499-511B-38E6-744D-CB5F2B96817B">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>183B3283-8645-C19B-9863-319D442EF01F</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="delka_trvani" id="EEE4458D-9DAB-930D-9166-F5ED858F5AF1">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>46EFAB9E-D16F-4510-F359-E886E127429C</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F1D3F230-B137-E46E-7098-95E16AFD83C1" name="STYL_PK">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>2E4F612B-9DEE-C922-DE2B-521F40186D42</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A2DD6617-5443-1C0C-284E-B5D28D2A3134"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="STYLY_CK_CENA" directorySegmentName="seg_0" id="1081D79F-7443-699E-FFAC-D219C42299D0">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-11 16:41:43 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<rule><![CDATA[cena > 0]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="STYLY_CK_TRVANI" directorySegmentName="seg_0" id="06D9BFDD-FF91-6B45-F3C7-BA993D2D82E8">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-11 16:41:43 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<rule><![CDATA[delka_trvani > 0]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

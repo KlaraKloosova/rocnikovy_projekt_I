@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="118831C8-4444-CC9A-0A63-581B99A9F47B" name="SPECIALIZACE">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>BF7A2E11-500E-6285-CE0A-6DB9A32C458F</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="specializace_id" id="EC46EC8A-63C3-70B3-219B-F83825FD23E4">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>32AB0D1C-8CAC-D886-0751-3C36A9173FBC</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nazev" id="EAEF8E6B-E314-B62B-1035-B307A4DC18CE">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>C7F43807-18F1-1989-3876-184B7E8623DC</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="popis" id="C330B96F-96C1-9B38-F154-A738E8B413FE">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>5E4D9103-4309-28FA-9B04-7B2A5C0923C4</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E425067B-0416-4A67-EDF4-ED0DFE2CE8DA" name="SPECIALIZACE_PK">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>AB6C4AA3-B9B3-9101-77DB-20C2F7E1D976</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EC46EC8A-63C3-70B3-219B-F83825FD23E4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

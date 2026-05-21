@@ -1,0 +1,117 @@
+-- IO6: Kontrola, zda datum není nižší než aktuální systémové datum
+
+CREATE OR REPLACE TRIGGER TRG_REZERVACE_DATUM_KONTROLA
+BEFORE INSERT OR UPDATE ON REZERVACE
+FOR EACH ROW
+BEGIN
+
+    IF :NEW.datum < TRUNC(SYSDATE) THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Chyba IO6: Rezervaci nelze vytvořit na datum v minulosti.');
+    END IF;
+END;
+/
+
+
+-- IO5: Dostupnost v rozvrhu a výjimky
+CCREATE OR REPLACE TRIGGER TRG_KONTROLA_VYJIMEK
+BEFORE INSERT OR UPDATE ON REZERVACE
+FOR EACH ROW
+DECLARE
+    v_pocet_absenci NUMBER;
+BEGIN
+    -- Kontrola, zda v tabulce výjimek neexistuje pro daného kadeřníka záznam, který se kryje s rezervací
+    SELECT COUNT(*) INTO v_pocet_absenci
+    FROM VYJIMKY_V_ROZVRHU
+    WHERE STYLISTA_stylista_id = :NEW.STYLISTA_stylista_id
+      AND datum = :NEW.datum
+      AND (
+          (TO_CHAR(:NEW.zacatek, 'HH24:MI') BETWEEN TO_CHAR(cas_od, 'HH24:MI') AND TO_CHAR(cas_do, 'HH24:MI'))
+          OR 
+          (TO_CHAR(:NEW.konec, 'HH24:MI') BETWEEN TO_CHAR(cas_od, 'HH24:MI') AND TO_CHAR(cas_do, 'HH24:MI'))
+      );
+
+    IF v_pocet_absenci > 0 THEN
+        RAISE_APPLICATION_ERROR(-20002, 'Chyba: V tento čas má kadeřník nahlášenou výjimku (dovolená/svátek).');
+    END IF;
+END;
+/
+
+
+
+-- IO4: Překryv termínů kadeřníka
+CREATE OR REPLACE TRIGGER TRG_KONTROLA_PREKRYVU
+BEFORE INSERT OR UPDATE ON REZERVACE
+FOR EACH ROW
+DECLARE
+    v_pocet_kolizi NUMBER;
+BEGIN
+    -- Hledáme rezervace pro stejného kadeřníka ve stejný den, 
+    -- které se časově překrývají s novým termínem
+    SELECT COUNT(*)
+    INTO v_pocet_kolizi
+    FROM REZERVACE
+    WHERE STYLISTA_stylista_id = :NEW.STYLISTA_stylista_id
+      AND datum = :NEW.datum
+      AND status != 'Zrušeno' -- Zrušené rezervace nám nevadí
+      AND rezervace_id != NVL(:NEW.rezervace_id, -1) -- Při update nepočítej rezervaci samu se sebou
+      AND (
+          -- Scénář A: Nový začátek padne do existující rezervace
+          (:NEW.zacatek >= zacatek AND :NEW.zacatek < konec)
+          OR 
+          -- Scénář B: Nový konec padne do existující rezervace
+          (:NEW.konec > zacatek AND :NEW.konec <= konec)
+          OR 
+          -- Scénář C: Nová rezervace kompletně obklopí tu existující
+          (:NEW.zacatek <= zacatek AND :NEW.konec >= konec)
+      );
+
+    IF v_pocet_kolizi > 0 THEN
+        RAISE_APPLICATION_ERROR(-20004, 'Chyba: Kadeřník má v tuto dobu již jinou rezervaci. Vyberte jiný čas.');
+    END IF;
+END;
+/
+
+
+-- Automatický výpočet konce rezervace
+
+CREATE OR REPLACE TRIGGER TRG_VYPOCET_KONCE_REZERVACE
+AFTER INSERT OR UPDATE OR DELETE ON POLOZKY_REZERVACE
+FOR EACH ROW
+DECLARE
+    v_celkova_delka NUMBER;
+BEGIN
+
+    SELECT SUM(delka_rezervace)
+    INTO v_celkova_delka
+    FROM POLOZKY_REZERVACE
+    WHERE REZERVACE_rezervace_id = NVL(:NEW.REZERVACE_rezervace_id, :OLD.REZERVACE_rezervace_id);
+
+    UPDATE REZERVACE
+    SET konec = zacatek + (v_celkova_delka / 1440)
+    WHERE rezervace_id = NVL(:NEW.REZERVACE_rezervace_id, :OLD.REZERVACE_rezervace_id);
+END;
+/
+
+
+CREATE OR REPLACE TRIGGER TRG_KONTROLA_VYJIMEK
+BEFORE INSERT OR UPDATE ON REZERVACE
+FOR EACH ROW
+DECLARE
+    v_pocet_absenci NUMBER;
+BEGIN
+    -- Kontrola, zda v tabulce výjimek neexistuje pro daného kadeřníka záznam, který se kryje s rezervací
+    SELECT COUNT(*) INTO v_pocet_absenci
+    FROM VYJIMKY_V_ROZVRHU
+    WHERE STYLISTA_stylista_id = :NEW.STYLISTA_stylista_id
+      AND datum = :NEW.datum
+      AND (
+          (TO_CHAR(:NEW.zacatek, 'HH24:MI') BETWEEN TO_CHAR(cas_od, 'HH24:MI') AND TO_CHAR(cas_do, 'HH24:MI'))
+          OR 
+          (TO_CHAR(:NEW.konec, 'HH24:MI') BETWEEN TO_CHAR(cas_od, 'HH24:MI') AND TO_CHAR(cas_do, 'HH24:MI'))
+      );
+
+    IF v_pocet_absenci > 0 THEN
+        RAISE_APPLICATION_ERROR(-20002, 'Chyba: V tento čas má kadeřník nahlášenou výjimku (dovolená/svátek).');
+    END IF;
+END;
+/

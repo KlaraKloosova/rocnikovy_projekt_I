@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E2D0A6DD-FA20-F8DF-C6EE-BC4C50E8C6F4" name="STYL">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 09:41:14 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="styl_id" id="64BDF229-F464-045C-1D6B-84CB165AE24F">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 09:41:21 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nazev" id="3EC82544-5EED-B86A-1C65-EE3EF45C3B88">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 09:42:23 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="popis" id="A8D22BDF-5F76-B18C-3E83-5755086185A7">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 09:41:47 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cena" id="183B3283-8645-C19B-9863-319D442EF01F">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 09:42:00 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="delka_trvani" id="46EFAB9E-D16F-4510-F359-E886E127429C">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 09:44:47 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="2E4F612B-9DEE-C922-DE2B-521F40186D42" name="STYL PK">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 09:41:47 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>64BDF229-F464-045C-1D6B-84CB165AE24F</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

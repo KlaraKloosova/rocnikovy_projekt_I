@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="ERD_rocnik2" id="BBB05E20-E37E-B492-4F2A-E49490CE7449" version="3.5">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 09:33:33 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>BBB05E20-E37E-B492-4F2A-E49490CE7449</designId>
+</OSDM_Design>

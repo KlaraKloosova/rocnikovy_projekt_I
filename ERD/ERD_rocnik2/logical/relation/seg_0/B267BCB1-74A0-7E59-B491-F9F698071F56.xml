@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_6" directorySegmentName="seg_0" id="B267BCB1-74A0-7E59-B491-F9F698071F56">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 09:52:32 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<sourcePk>2C537D99-0CE3-D591-1BEA-CB6042B0FF0F</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>obsahuje</nameOnSource>
+<nameOnTarget>patří do</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>0D19F465-6EC7-E933-BF59-C0504EE40F08</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>14463E81-E675-C461-A0F3-D1DE3007638E</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

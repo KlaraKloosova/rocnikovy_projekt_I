@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="0029F09B-E0E4-B87C-C560-5F461853FB99" containerWithKeyObject="A69CDDF0-AA8B-1484-4E06-33E18FCA8BA8" localFKIndex="34139A08-4C07-C13F-4F78-61F4CF0DDEC2" name="POLOZKA_REZ_STYL_FK">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>D160E59E-9515-5204-9570-D94D78A97C77</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<referredTableLongName>STYLY</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>9F92A0D0-0A76-CCDF-CB17-9BF1EA1E30C5</referredTableID>
+<keyObject>F1D3F230-B137-E46E-7098-95E16AFD83C1</keyObject>
+<referredKeyID>F1D3F230-B137-E46E-7098-95E16AFD83C1</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>styl_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

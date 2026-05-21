@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="695E2E9F-5FD3-5370-967B-FF77F03BE6FC" containerWithKeyObject="0238E4BE-0DD8-2C2D-D407-D74B1D87F033" localFKIndex="BD469A9F-192E-3F20-CCB0-2BD875926A42" name="SPEC_STYLISTY_SPECIALIZACE_FK">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>A1184E0F-1275-F13B-A43A-87C3B4002C7D</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<referredTableLongName>SPECIALIZACE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>118831C8-4444-CC9A-0A63-581B99A9F47B</referredTableID>
+<keyObject>E425067B-0416-4A67-EDF4-ED0DFE2CE8DA</keyObject>
+<referredKeyID>E425067B-0416-4A67-EDF4-ED0DFE2CE8DA</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>specializace_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

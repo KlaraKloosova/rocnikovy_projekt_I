@@ -1,0 +1,9 @@
+Inteligentní rezervační portál pro kadeřnický salon
+
+Webová aplikace představuje moderní pojetí správy kadeřnického salonu. Po přihlášení si uživatelé vybírají čas, 
+případně stylistu a typ služby. Vedle klasického formuláře si uživatel může také vybrat přímo konkrétní styly
+a stylistu na základě jejich portfolií. Systém na pozadí automaticky vypočítává celkovou délku návštěvy podle 
+náročnosti zvolených služeb, od odbarvování až po finální střih. Díky tomu aplikace omezuje riziko špatně 
+odhadnutých časových slotů a nabízí klientům plynulý zážitek. Administrátorovi zase poskytuje nástroj pro 
+efektivní řízení chodu salonu a prezentaci práce celého týmu. Stylisté mohou nahrávat nové styly do lookbooku, 
+upravovat ceny daných looků a přidávat popisky.

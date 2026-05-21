@@ -1,0 +1,148 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8A3EBA09-5E83-421D-0B29-D8F3D8D371D8" name="REZERVACE">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>0D19F465-6EC7-E933-BF59-C0504EE40F08</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="rezervace_id" id="293368B1-BF5D-9A5D-3EE6-8B246E3B5999">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>A709A4C8-E9AF-B854-C75C-7233EFC6FCC9</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="datum" id="A22F2211-4835-3598-96DD-643006EBE80B">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>A75DE4B0-B947-2405-34F2-85AB68F6703D</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="zacatek" id="3B32DD85-054F-2F17-FF1D-176BCB14211E">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>F1AC0A8E-B019-D97F-58FD-A6C7F69B4A76</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="konec" id="5695EE85-C49B-535E-F06C-34EBB3F2D9A2">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>30DCCEF5-6B37-EFB5-C4F8-9544FAAC9E79</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="status" id="778D5752-F441-B835-B0BF-8D7FB9AE13EC">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>2F8D52A5-4D80-2CC2-FDC5-3AD5CFB0E9BB</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STYLISTA_stylista_id" id="8C5F0309-F8D1-17C0-B705-EA5EC23E4532">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>8DCAE592-34B5-75E3-A56B-AF1FF8F3A02E</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9BDA7E11-294A-5DC4-8A5C-9223E31CED16" referredColumn="EF136A67-53F0-3B2B-C2B3-BEF1F91B57B3"/>
+</associations>
+</Column>
+<Column name="KLIENT_klient_id" id="19297ED6-D218-021C-3ED4-9D17EC4FECE1">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>FD9F628C-7687-4F1A-60C0-E03CBB669443</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="538D2875-9E41-3FCD-C12D-25437C1387AD" referredColumn="75AA8D4F-8EDF-5C79-314E-73DBB51BEAB9"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="124FCE0C-BA3B-2F66-B2AD-C041DFD1F081" name="REZERVACE_PK">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>2C537D99-0CE3-D591-1BEA-CB6042B0FF0F</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="293368B1-BF5D-9A5D-3EE6-8B246E3B5999"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="95BE3E5C-6757-9ECA-2956-B9DF4F092663" name="REZERVACE_STYLISTA_FK">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>69675709-ED9D-3C81-2848-DFFF7DB711E9</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8C5F0309-F8D1-17C0-B705-EA5EC23E4532"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CEA446DE-C4DC-6736-9E16-78CE17F7D240" name="REZERVACE_KLIENT_FK">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>46FC0531-8903-687D-E849-07B12E40C16B</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="19297ED6-D218-021C-3ED4-9D17EC4FECE1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="REZERVACE_CK_CAS" directorySegmentName="seg_0" id="23C36A88-F938-D85D-66B0-9D1F412713BF">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-11 16:39:27 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<rule><![CDATA[zacatek < konec]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="REZERVACE_CK_STATUS" directorySegmentName="seg_0" id="1B519136-8EB3-1CD6-BB0D-3DFD79B26631">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-11 16:39:27 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<rule><![CDATA[status IN ('PLANOVANO', 'DOKONCENO', 'ZRUSENO')]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

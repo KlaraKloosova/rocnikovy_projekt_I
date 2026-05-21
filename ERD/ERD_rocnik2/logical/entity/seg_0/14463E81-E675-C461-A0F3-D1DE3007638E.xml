@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="14463E81-E675-C461-A0F3-D1DE3007638E" name="POLOZKA_REZERVACE">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 09:50:04 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="polozka_id" id="EC1E928B-77B6-7476-463F-39882CD52362">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 09:50:13 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cena_pro_rezervaci" id="56D9FB05-644F-E0D3-8161-939FB70B064B">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 09:51:47 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="delka_rezervace" id="68290BF1-78DA-6488-93CE-857782AD5DED">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 09:51:55 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rezervace_id" id="664F0947-EB13-AAFC-F86A-FDE3678E2FFB">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 09:52:32 UTC</createdTime>
+<generatorID>B267BCB1-74A0-7E59-B491-F9F698071F56</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<referedAttribute>A709A4C8-E9AF-B854-C75C-7233EFC6FCC9</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="styl_id" id="F3805250-EAA2-3E77-530D-43D2ECC9623A">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 09:52:37 UTC</createdTime>
+<generatorID>D160E59E-9515-5204-9570-D94D78A97C77</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="true"/>
+</engineerTo>
+<referedAttribute>64BDF229-F464-045C-1D6B-84CB165AE24F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="3C6C2689-EC72-0D43-D57C-F70E562722DA" name="POLOZKA_REZERVACE PK">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 09:51:46 UTC</createdTime>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A53F7A3A-7F1B-D2B7-FD08-C8BFADB8F1E8" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>EC1E928B-77B6-7476-463F-39882CD52362</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

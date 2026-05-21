@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D3B274C0-D301-66F5-D812-7026BC58BF4F" containerWithKeyObject="0238E4BE-0DD8-2C2D-D407-D74B1D87F033" localFKIndex="0DFEF566-AFD2-D552-EC1E-FF9DCB50A43C" name="SPEC_STYLISTY_STYLISTA_FK">
+<createdBy>klark</createdBy>
+<createdTime>2026-05-06 10:31:41 UTC</createdTime>
+<generatorID>C1681261-756A-383C-B050-E6DC730EB1C9</generatorID>
+<ownerDesignName>ERD_rocnik2</ownerDesignName>
+<referredTableLongName>STYLISTI</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>58828F83-DB9C-4D37-10B7-3052383172A5</referredTableID>
+<keyObject>4FA5EC4A-F225-E32E-BDFC-EDDB37631F54</keyObject>
+<referredKeyID>4FA5EC4A-F225-E32E-BDFC-EDDB37631F54</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>stylista_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
