@@ -1,0 +1,4 @@
+.env
+node_modules/
+instantclient_23_0/
+*.dll

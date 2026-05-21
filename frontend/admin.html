@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrace | Studio Velvet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="hlavni-navigace">
+        <div class="kontejner navigace-obsah">
+            <div class="logo">Studio <span class="ruzovy-text">Velvet.</span> <span style="font-size: 12px; letter-spacing: 1px; text-transform: uppercase; margin-left: 10px; color: var(--tmava-seda);">[Admin Portal]</span></div>
+            <div class="menu">
+                <a href="index.html" class="menu-odkaz">Zpět na web</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="kontejner" style="margin-top: 40px; margin-bottom: 60px;">
+        <header>
+            <h1 class="nadpis-stranky" style="font-size: 32px;">Interní <span class="ruzovy-text">Administrace</span></h1>
+            <div class="ozdobna-linka" style="margin-left: 0;"></div>
+            <p style="color: var(--tmava-seda);">Správa rozvrhu, rezervací a online katalogu služeb (Lookbooku).</p>
+        </header>
+
+        <div class="admin-prepínač">
+            <button class="tab-tlacitko aktivni" onclick="prepniSekci('sekce-rezervace', this)">Seznam rezervací</button>
+            <button class="tab-tlacitko" onclick="prepniSekci('sekce-lookbook', this)">Správa Lookbooku</button>
+        </div>
+
+        <div id="sekce-rezervace" class="sekce-obsahu aktivni">
+            <div class="admin-box">
+                <h2 class="formular-podnadpis">Filtr rozvrhu</h2>
+                <div class="skupina-inputu" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                    <select id="admin-vyber-stylisty" class="vstupni-pole">
+                        <option value="ALL">-- Všichni kadeřníci --</option>
+                    </select>
+                    <input type="date" class="vstupni-pole" id="admin-vyber-datumu">
+                </div>
+            </div>
+
+            <div class="admin-box" style="background: var(--bila); padding: 20px 0;">
+                <table class="admin-tabulka">
+                    <thead>
+                        <tr>
+                            <th>Čas od - do</th>
+                            <th>Kadeřník</th>
+                            <th>Zákazník</th>
+                            <th>Kontakt</th>
+                            <th>Status</th>
+                            <th>Akce</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-vypis-rezervaci"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="sekce-lookbook" class="sekce-obsahu">
+            <div class="admin-box" style="background: var(--bila); padding: 20px 0; margin-top: 30px;">
+                <h2 class="formular-podnadpis" style="padding-left: 15px;">Úprava katalogu služeb, cen a stopáže</h2>
+                <table class="admin-tabulka">
+                    <thead>
+                        <tr>
+                            <th style="width: 5%;">ID</th>
+                            <th style="width: 25%;">Název služby</th>
+                            <th style="width: 40%;">Popis služby (v Lookbooku)</th>
+                            <th style="width: 12%;">Cena (Kč)</th>
+                            <th style="width: 10%;">Délka (min)</th>
+                            <th style="width: 8%;">Akce</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-vypis-lookbooku">
+                        <tr><td colspan="6" style="text-align: center; padding: 20px;">Načítám katalog služeb...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dnes = new Date().toISOString().split('T')[0];
+            document.getElementById('admin-vyber-datumu').value = dnes;
+
+            nactiStylistyAdmin();
+            nactiRezervaceDne();
+            nactiLookbookAdmin();
+
+            document.getElementById('admin-vyber-stylisty').addEventListener('change', nactiRezervaceDne);
+            document.getElementById('admin-vyber-datumu').addEventListener('change', nactiRezervaceDne);
+        });
+
+        function prepniSekci(sekceId, tlacitko) {
+            document.querySelectorAll('.sekce-obsahu').forEach(s => s.classList.remove('aktivni'));
+            document.querySelectorAll('.tab-tlacitko').forEach(t => t.classList.remove('aktivni'));
+            
+            document.getElementById(sekceId).classList.add('aktivni');
+            tlacitko.classList.add('aktivni');
+        }
+
+        async function nactiStylistyAdmin() {
+            const select = document.getElementById('admin-vyber-stylisty');
+            try {
+                const response = await fetch('http://localhost:3000/api/stylists');
+                const data = await response.json();
+                data.forEach(k => {
+                    select.innerHTML += `<option value="${k.stylista_id}">${k.jmeno} ${k.prijmeni}</option>`;
+                });
+            } catch (err) { console.error(err); }
+        }
+
+        async function nactiRezervaceDne() {
+            const stylistId = document.getElementById('admin-vyber-stylisty').value;
+            const date = document.getElementById('admin-vyber-datumu').value;
+            const tbody = document.getElementById('admin-vypis-rezervaci');
+            if (!date) return;
+
+            try {
+                tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; padding: 20px;">Vyhledávám v databázi...</td></tr>`;
+                const response = await fetch('http://localhost:3000/api/admin/bookings', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ stylistId, date })
+                });
+                const rezervace = await response.json();
+                tbody.innerHTML = "";
+
+                if (rezervace.length === 0) {
+                    tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--tmava-seda); padding: 30px;">Na tento den nejsou v systému žádné rezervace.</td></tr>`;
+                    return;
+                }
+
+                rezervace.forEach(r => {
+                    const casOd = r.zacatek.split(' ')[1].substring(0, 5);
+                    const casDo = r.konec.split(' ')[1].substring(0, 5);
+
+
+                    const stavy = ['Čeká', 'Potvrzeno', 'Zrušeno', 'Dokončeno'];
+                    let statusSelect = `<select class="vstupni-pole" style="padding: 5px; margin: 0; width: auto;" onchange="zmenStavRezervace(${r.rezervace_id}, this.value)">`;
+                    stavy.forEach(stav => {
+                        const vybrano = r.status === stav ? 'selected' : '';
+                        statusSelect += `<option value="${stav}" ${vybrano}>${stav}</option>`;
+                    });
+                    statusSelect += `</select>`;
+
+                    tbody.innerHTML += `
+                        <tr id="radek-rezervace-${r.rezervace_id}">
+                            <td style="font-weight: 600;">${casOd} - ${casDo}</td>
+                            <td style="color: #6b7280; font-size: 14px;">${r.kadernek_jmeno}</td>
+                            
+                            <td><strong>${r.klient_jmeno}</strong></td>
+                            <td style="color: var(--tmava-seda); font-size: 14px;">${r.klient_email}</td>
+                            
+                            <td>${statusSelect}</td>
+                            
+                            <td><button class="btn-zrusit" onclick="zrusRezervaci(${r.rezervace_id})">Zrušit termín</button></td>
+                        </tr>
+                    `;
+                });
+            } catch (err) { tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: red;">Chyba komunikace.</td></tr>`; }
+        }
+
+    
+
+        async function zmenStavRezervace(id, novyStav) {
+            try {
+                const response = await fetch(`http://localhost:3000/api/admin/reservations/${id}/status`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ status: novyStav })
+                });
+                const data = await response.json();
+                if (!data.success) {
+                    alert("Chyba při změně stavu: " + data.error);
+                }
+            } catch (err) {
+                console.error(err);
+                alert("Chyba při komunikaci se serverem.");
+            }
+        }
+
+        async function zrusRezervaci(id) {
+            if (!confirm("Opravdu chcete tuto rezervaci zrušit?")) return;
+            try {
+                const response = await fetch(`http://localhost:3000/api/admin/bookings/${id}/cancel`, { method: 'PUT' });
+                if (response.ok) {
+                    alert("Rezervace byla úspěšně zrušena.");
+              
+                    const radek = document.getElementById(`radek-rezervace-${id}`);
+                    if (radek) {
+                        const select = radek.querySelector('select');
+                        if (select) select.value = 'Zrušeno';
+                    }
+                }
+            } catch (err) { alert("Chyba při komunikaci."); }
+        }
+
+        async function nactiLookbookAdmin() {
+            const tbody = document.getElementById('admin-vypis-lookbooku');
+            try {
+                const response = await fetch('http://localhost:3000/api/styles');
+                const sluzby = await response.json();
+                tbody.innerHTML = "";
+
+                sluzby.forEach(s => {
+                    tbody.innerHTML += `
+                        <tr>
+                            <td><strong>#${s.styl_id}</strong></td>
+                            <td><input type="text" id="nazev-${s.styl_id}" class="input-edit" value="${s.nazev}"></td>
+                            <td><input type="text" id="popis-${s.styl_id}" class="input-edit" value="${s.popis || ''}"></td>
+                            <td><input type="number" id="cena-${s.styl_id}" class="input-edit" value="${s.cena}"></td>
+                            <td><input type="number" id="delka-${s.styl_id}" class="input-edit" value="${s.delka_trvani}"></td>
+                            <td>
+                                <button class="btn-ulozit" onclick="ulozZmenySluzby(${s.styl_id})">Uložit</button>
+                            </td>
+                        </tr>
+                    `;
+                });
+            } catch (err) { tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: red;">Chyba načítání služeb.</td></tr>`; }
+        }
+
+        async function ulozZmenySluzby(id) {
+            const nazev = document.getElementById(`nazev-${id}`).value;
+            const popis = document.getElementById(`popis-${id}`).value;
+            const cena = document.getElementById(`cena-${id}`).value;
+            const delka = document.getElementById(`delka-${id}`).value;
+
+            try {
+                const response = await fetch(`http://localhost:3000/api/admin/styles/${id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ nazev, popis, cena, delka })
+                });
+
+                if (response.ok) {
+                    alert("Změny byly úspěšně uloženy do databáze PostgreSQL a projeví se na webu.");
+                } else {
+                    const errData = await response.json();
+                    alert("Chyba při ukládání: " + errData.error);
+                }
+            } catch (err) {
+                console.error(err);
+                alert("Selhalo odeslání dat na server.");
+            }
+        }
+    </script>
+</body>
+</html>

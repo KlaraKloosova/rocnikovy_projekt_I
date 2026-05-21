@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezervace | Studio Velvet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="hlavni-navigace">
+        <div class="kontejner navigace-obsah">
+            <div class="logo">Studio <span class="ruzovy-text">Velvet.</span></div>
+            <div class="menu">
+                <a href="index.html" class="menu-odkaz">Domů</a>
+                <a href="lookbook.html" class="menu-odkaz">Lookbook</a>
+                <a href="o_nas.html" class="menu-odkaz">O nás</a>
+                <a href="rezervace.html" class="menu-odkaz aktivni-stranka">Rezervace</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="hlavicka-podstranky">
+            <div class="kontejner">
+                <h1 class="nadpis-stranky">Chytrá <span class="ruzovy-text">Rezervace</span></h1>
+                <div class="ozdobna-linka"></div>
+                <p class="podtitulek-stranky">Vyberte si požadované služby. Náš systém automaticky sečte časovou náročnost a nabídne volné sloty.</p>
+            </div>
+        </header>
+
+        <section class="sekce-rezervace">
+            <div class="kontejner mrizka-rezervace">
+                <div class="rezervacni-formular">
+                    <h2 class="nadpis-formulare">1. Výběr služeb</h2>
+                    <div id="seznam-sluzeb-rezervace" class="seznam-sluzeb"></div>
+
+                    <h2 class="nadpis-formulare odsazeni-nahoru">2. Osobní údaje</h2>
+                    <div class="skupina-inputu">
+                        <input type="text" placeholder="Jméno a příjmení" class="vstupni-pole" id="klient-jmeno">
+                        <input type="email" placeholder="E-mail" class="vstupni-pole" id="klient-email">
+                        <input type="tel" placeholder="Telefonní číslo" class="vstupni-pole" id="klient-tel">
+                    </div>
+
+                    <h2 class="nadpis-formulare odsazeni-nahoru">3. Termín a Stylista</h2>
+                    <div class="skupina-inputu">
+                        <select id="vyber-stylisty" class="vstupni-pole">
+                            <option value="">-- Vyberte kadeřníka --</option>
+                        </select>
+                        <input type="date" class="vstupni-pole" id="vyber-datumu">
+                    </div>
+
+                    <div id="sekce-casu" style="display: none;" class="odsazeni-nahoru">
+                        <h3 class="formular-podnadpis">Dostupné časy pro vaši návštěvu:</h3>
+                        <div class="mrizka-slotu" id="kontejner-slotu"></div>
+                    </div>
+                </div>
+
+                <div class="panel-shrnuti">
+                    <div class="box-vypoctu">
+                        <h3 class="nadpis-vypoctu">Shrnutí</h3>
+                        <div class="radek-vypoctu">
+                            <span class="stitek-vypoctu">Celkový čas</span>
+                            <span class="hodnota-vypoctu" id="vysledek-cas">0 minut</span>
+                        </div>
+                        <div class="radek-vypoctu">
+                            <span class="stitek-vypoctu">Předběžná cena</span>
+                            <span class="hodnota-vypoctu ruzovy-text" id="vysledek-cena">0 Kč</span>
+                        </div>
+                        <button class="tlacitko-potvrdit" id="btn-odeslat">Odeslat rezervaci</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="zapati">
+        <div class="kontejner zapati-obsah">
+            <div class="logo-zapati">Studio <span class="ruzovy-text">Velvet.</span></div>
+            <p class="copyright">&copy; 2026 Všechna práva vyhrevna.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
