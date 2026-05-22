@@ -178,7 +178,74 @@ async function nactiDostupneCasy() {
     }
 }
 
+/* VYSKAKOVACÍ OKNO*/
 
+document.addEventListener('DOMContentLoaded', () => {
+    const btnOdeslat = document.getElementById('btn-odeslat');
+    const successModal = document.getElementById('successModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const formular = document.getElementById('rezervacniFormular');
+
+    if (btnOdeslat) {
+        btnOdeslat.addEventListener('click', (e) => {
+           
+            e.preventDefault(); 
+
+
+            const jmeno = document.getElementById('klient-jmeno').value.trim();
+            const email = document.getElementById('klient-email').value.trim();
+            const telefon = document.getElementById('klient-tel').value.trim();
+            const stylistId = document.getElementById('vyber-stylisty').value;
+            const date = document.getElementById('vyber-datumu').value;
+            const cas = window.vybranyCas; 
+
+
+            const googleCheckboxes = document.querySelectorAll('.sluzba-checkbox:checked');
+
+            if (!jmeno || !email || !telefon || !stylistId || !date || !cas || googleCheckboxes.length === 0) {
+                alert('Prosím, vyplňte všechny osobní údaje, vyberte služby, kadeřníka, datum a klikněte na konkrétní čas.');
+                return;
+            }
+
+            if (successModal) {
+                successModal.style.display = 'block';
+            }
+        });
+    }
+
+    /* 4. OBSLUHA ZAVÍRÁNÍ OKNA */
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', () => {
+            if (successModal) successModal.style.display = 'none';
+            
+            vynulujFormularPoOdeslani();
+        });
+    }
+
+
+    window.addEventListener('click', (e) => {
+        if (e.target === successModal) {
+            successModal.style.display = 'none';
+            vynulujFormularPoOdeslani();
+        }
+    });
+});
+
+
+function vynulujFormularPoOdeslani() {
+    if (document.getElementById('klient-jmeno')) document.getElementById('klient-jmeno').value = "";
+    if (document.getElementById('klient-email')) document.getElementById('klient-email').value = "";
+    if (document.getElementById('klient-tel')) document.getElementById('klient-tel').value = "";
+    if (document.getElementById('vyber-stylisty')) document.getElementById('vyber-stylisty').value = "";
+    if (document.getElementById('vyber-datumu')) document.getElementById('vyber-datumu').value = "";
+    
+    document.querySelectorAll('.sluzba-checkbox').forEach(cb => cb.checked = false);
+    
+    window.vybranyCas = null;
+    if (typeof prepocitejVysledek === "function") {
+        prepocitejVysledek(); 
+    }
+}
 /* INITIALIZATION */
 
 document.addEventListener('DOMContentLoaded', () => {
